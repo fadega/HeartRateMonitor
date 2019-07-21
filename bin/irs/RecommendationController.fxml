@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="606.0" prefWidth="1249.0" style="-fx-background-color: #FAB57B;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="irs.RecommendationController">
+   <children>
+      <HBox layoutX="10.0" layoutY="105.0" prefHeight="375.0" prefWidth="1231.0" spacing="15.0">
+         <children>
+            <VBox prefHeight="375.0" prefWidth="282.0" spacing="25.0" style="-fx-border-style: dashed;">
+               <children>
+                  <Label prefHeight="23.0" prefWidth="302.0" text="Enter details ">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtId" prefHeight="30.0" prefWidth="214.0" promptText="Patient Id">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtDays" layoutX="10.0" layoutY="27.0" promptText="Number of days">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXDatePicker fx:id="dateFrom" prefHeight="25.0" prefWidth="248.0" promptText="Pick Start Date" />
+                  <JFXTextField fx:id="txtPercent" promptText="percent between (0 -100)%">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <AnchorPane prefHeight="142.0" prefWidth="313.0">
+                     <children>
+                        <JFXButton fx:id="btnCalculate" layoutX="-2.0" layoutY="96.0" onAction="#calculateRecommendation" prefHeight="47.0" prefWidth="141.0" style="-fx-background-color: #1D223B;" text="Calculate" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXTextField fx:id="txtMin" layoutX="105.0" layoutY="-3.0" prefHeight="36.0" prefWidth="37.0" text="60">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets top="15.0" />
+                           </padding>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txtMax" layoutX="101.0" layoutY="34.0" prefHeight="32.0" prefWidth="37.0" text="100">
+                           <padding>
+                              <Insets top="15.0" />
+                           </padding>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </JFXTextField>
+                        <Label layoutX="3.0" layoutY="15.0" text="Normal MIN:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="2.0" layoutY="52.0" text="Normal MAX:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="btnClear" layoutX="176.0" layoutY="100.0" onAction="#calculateRecommendation" prefHeight="46.0" prefWidth="78.0" style="-fx-background-color: #1D223B;" text="Clear" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="15.0" right="10.0" top="15.0" />
+               </padding>
+            </VBox>
+            <AnchorPane prefHeight="375.0" prefWidth="649.0">
+               <children>
+                  <TableView fx:id="testTableView" prefHeight="424.0" prefWidth="733.0">
+                    <columns>
+                      <TableColumn fx:id="testIdCol" prefWidth="73.0" text="Test Id" />
+                        <TableColumn fx:id="patientIdCol" prefWidth="73.0" text="Patient Id" />
+                        <TableColumn fx:id="testReadingCol" text="Test Reading" />
+                        <TableColumn fx:id="testDateCol" prefWidth="165.0" text="Test Date" />
+                        <TableColumn fx:id="testCenterCol" minWidth="4.0" prefWidth="220.0" text="Test Center" />
+                        <TableColumn fx:id="regisUserCol" prefWidth="112.0" text="Registered By User" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <Separator orientation="VERTICAL" prefHeight="388.0" prefWidth="1.0" />
+            <AnchorPane prefHeight="375.0" prefWidth="189.0">
+               <children>
+                  <Label layoutX="21.0" layoutY="14.0" text="Recomendation">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="21.0" layoutY="42.0" text="Message">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <JFXTextArea fx:id="txtRecomendationMessage" layoutX="16.0" layoutY="105.0" prefHeight="185.0" prefWidth="154.0" promptText="Recommendation message will display here" style="-fx-background-color: #ffffff;">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" left="8.0" right="10.0" top="10.0" />
+                     </padding>
+                  </JFXTextArea>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+      <HBox layoutX="302.0" layoutY="535.0" prefHeight="47.0" prefWidth="623.0" spacing="25.0">
+         <children>
+            <JFXButton fx:id="btnManageTests" prefHeight="48.0" prefWidth="151.0" style="-fx-background-color: #1D223B;" text="Manage Tests" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnDashboard" layoutX="352.0" layoutY="10.0" prefHeight="46.0" prefWidth="163.0" style="-fx-background-color: #1D223B;" text="Dashboard" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnManageUsers" layoutX="523.0" layoutY="10.0" prefHeight="46.0" prefWidth="163.0" style="-fx-background-color: #1D223B;" text="Manage Users" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+      <Label layoutX="22.0" layoutY="24.0" prefHeight="69.0" prefWidth="339.0" text="Check if a heart rate test is recommended" textFill="#0a0a0a">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <HBox layoutX="543.0" layoutY="40.0" prefHeight="40.0" prefWidth="396.0" spacing="10.0">
+         <children>
+            <JFXTextField prefHeight="31.0" prefWidth="295.0" promptText="Search for a result">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton prefHeight="34.0" prefWidth="89.0" style="-fx-background-color: #1D223B;" text="Search" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+      <HBox layoutX="1177.0" layoutY="43.0" prefHeight="34.0" prefWidth="64.0" spacing="10.0">
+         <children>
+            <JFXButton fx:id="btnLogOut" onAction="#logOut" style="-fx-background-color: #f34059;" text="Logout" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+      <Separator layoutX="10.0" layoutY="83.0" prefHeight="6.0" prefWidth="1231.0" />
+      <Label fx:id="lblInfo" layoutX="10.0" layoutY="547.0" prefHeight="17.0" prefWidth="227.0" textFill="#eb0f0f" visible="false">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

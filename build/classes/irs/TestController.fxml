@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="606.0" prefWidth="1249.0" style="-fx-background-color: #FAB57B;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="irs.TestController">
+   <children>
+      <HBox layoutX="9.0" layoutY="105.0" prefHeight="419.0" prefWidth="1226.0" spacing="10.0">
+         <children>
+            <VBox prefHeight="442.0" prefWidth="354.0" spacing="15.0" style="-fx-border-style: dashed;">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="371.0" text="Add Test  Rate/Reading">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtId" editable="false" opacity="0.68" promptText="Test Id">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXDatePicker fx:id="testDatePicker" prefHeight="25.0" prefWidth="363.0" promptText="Test Date" />
+                  <JFXTextField fx:id="txtReading" layoutX="21.0" layoutY="63.0" promptText="Rate / Reading">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXComboBox fx:id="comboPatientId" prefHeight="25.0" prefWidth="326.0" promptText="Picke Patient ID" />
+                  <JFXComboBox fx:id="comboUserId" layoutX="21.0" layoutY="183.0" prefHeight="25.0" prefWidth="326.0" promptText="Pick User ID" />
+                  <JFXTextField fx:id="txtTestCenter" layoutX="21.0" layoutY="143.0" promptText="Test Center">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </JFXTextField>
+                  <HBox prefHeight="62.0" prefWidth="311.0" spacing="20.0">
+                     <children>
+                        <JFXButton fx:id="btnAddTest" onAction="#passTestToAdd" prefHeight="44.0" prefWidth="98.0" style="-fx-background-color: #1D223B;" text="Add New" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="btnUpdateTest" layoutX="10.0" layoutY="10.0" onAction="#passTestToUpdate" prefHeight="44.0" prefWidth="83.0" style="-fx-background-color: #1D223B;" text="Update" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="btnClear" layoutX="108.0" layoutY="10.0" onAction="#clearFields" prefHeight="44.0" prefWidth="80.0" style="-fx-background-color: #1D223B;" text="Clear" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+            <TableView fx:id="testTableview" onMouseClicked="#getTestTableData" prefHeight="438.0" prefWidth="872.0">
+              <columns>
+                <TableColumn fx:id="idCol" prefWidth="81.0" text="ID" />
+                <TableColumn fx:id="dateCol" prefWidth="178.0" text="Test Date" />
+                  <TableColumn fx:id="rateCol" prefWidth="134.0" text="Rate - Reading" />
+                  <TableColumn fx:id="patientIdCol" prefWidth="94.0" text="Patient Id" />
+                  <TableColumn fx:id="testCenterCol" prefWidth="210.0" text="Test Center" />
+                  <TableColumn fx:id="userIdCol" prefWidth="117.0" text="Regetered By User" />
+              </columns>
+            </TableView>
+         </children>
+      </HBox>
+      <HBox layoutX="369.0" layoutY="529.0" prefHeight="69.0" prefWidth="781.0" spacing="20.0">
+         <children>
+            <JFXButton fx:id="btnDelete" onAction="#passTestToDelete" prefHeight="44.0" prefWidth="105.0" style="-fx-background-color: #600924;" text="Delete" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnLoadDashboard" layoutX="10.0" layoutY="10.0" prefHeight="44.0" prefWidth="111.0" style="-fx-background-color: #1D223B;" text="Dashboard" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnLoadRecommendation" layoutX="108.0" layoutY="10.0" prefHeight="44.0" prefWidth="165.0" style="-fx-background-color: #1D223B;" text="Recommendation" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnLoadUsers" layoutX="227.0" layoutY="20.0" prefHeight="45.0" prefWidth="137.0" style="-fx-background-color: #1D223B;" text="Manage Users" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+         </children>
+         <padding>
+            <Insets bottom="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <HBox layoutX="399.0" layoutY="23.0" prefHeight="54.0" prefWidth="531.0">
+         <children>
+            <JFXTextField fx:id="txtSearch" prefHeight="44.0" prefWidth="517.0" promptText="Search for testcenter of patient">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </JFXTextField>
+            <ImageView fitHeight="36.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@searchIcon.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="-30.0" top="10.0" />
+               </HBox.margin>
+            </ImageView>
+         </children>
+      </HBox>
+      <JFXButton fx:id="btnLogout" layoutX="1110.0" layoutY="34.0" onAction="#logout" prefHeight="38.0" prefWidth="98.0" style="-fx-background-color: #f34059;" text="Logout" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
