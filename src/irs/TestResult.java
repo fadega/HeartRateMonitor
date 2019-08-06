@@ -274,7 +274,7 @@ public class TestResult {
                     }
                 }
             }else{
-                return "No Records Found for the input provided";
+                return "No records found for the input provided";
             }
 
 
@@ -356,4 +356,3 @@ public class TestResult {
         this.userId = userId;
     }
 }
-
