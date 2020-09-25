@@ -1,6 +1,6 @@
 **Info**
 
-This Java project implements a Heartrate Recommendation System (IRS). It has a crud functionality where adding,displaying, deleting and updating both patients and users is possible.It project was developed with an mvc development pattern. However, the folder structure isn't set to reflect the MVC model. I kept the model, view and controller classes in the src directory in irs package. It's requires jfoenix and mysql's jdbc driver libraries to run and these external libraries are included in the lib directory. The build.xml file is purely for automation purpose. You can run this project in one of the following two ways:     
+This Java project implements a Heartrate Test Recommendation System. It has a crud functionality where adding,displaying, deleting and updating both patients and users is possible.It project was developed with an mvc development pattern. However, the folder structure isn't set to reflect the MVC model. I kept the model, view and controller classes in the src directory in irs package. It's requires jfoenix and mysql's jdbc driver libraries to run and these external libraries are included in the lib directory. The build.xml file is purely for automation purpose. You can run this project in one of the following two ways:     
 
 ``` 
 1. Download src and lib directory only and add the jfoenix and
